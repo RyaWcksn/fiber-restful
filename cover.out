@@ -1,0 +1,14 @@
+mode: set
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service.go:23.76,28.2 1 1
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_impl.go:12.120,17.16 4 1
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_impl.go:22.2,22.20 1 1
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_impl.go:17.16,20.3 2 1
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_mock.go:28.61,32.2 3 0
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_mock.go:35.59,37.2 1 0
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_mock.go:40.112,46.2 5 0
+github.com/RyaWcksn/fiber-restful/apis/v1/services/service_mock.go:49.80,52.2 2 0
+github.com/RyaWcksn/fiber-restful/ports/database/customer/customer_impl.go:11.94,18.16 5 1
+github.com/RyaWcksn/fiber-restful/ports/database/customer/customer_impl.go:27.2,27.18 1 1
+github.com/RyaWcksn/fiber-restful/ports/database/customer/customer_impl.go:18.16,19.27 1 1
+github.com/RyaWcksn/fiber-restful/ports/database/customer/customer_impl.go:23.3,24.18 2 0
+github.com/RyaWcksn/fiber-restful/ports/database/customer/customer_impl.go:19.27,22.4 2 1
