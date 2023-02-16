@@ -1,5 +1,12 @@
 package configs
 
+type Config struct {
+	ENV         string         `json:"env" mapstructure:"env" validate:"required"`
+	LogLevel    string         `json:"log_level" mapstructure:"log_level"`
+	HTTPAddress string         `json:"http_address" mapstructure:"http_address" validate:"required"`
+	DBConf      DatabaseConfig `json:"db" mapstructure:"db" validate:"required"`
+}
+
 type DatabaseConfig struct {
 	Username           string `json:"mysql_username" mapstructure:"mysql_username"`
 	Password           string `json:"mysql_password" mapstructure:"mysql_password"`

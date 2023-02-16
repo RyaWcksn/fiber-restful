@@ -12,4 +12,12 @@ type CustomerImpl struct {
 	db *sql.DB
 }
 
+// NewCustomer initiate customer database instance.
+func NewCustomer(l logger.ILogger, db *sql.DB) *CustomerImpl {
+	return &CustomerImpl{
+		L:  l,
+		db: db,
+	}
+}
+
 var _ repositories.CRepository = (*CustomerImpl)(nil)
