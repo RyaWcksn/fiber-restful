@@ -9,6 +9,12 @@ import (
 )
 
 func TestHandlerImpl_Get(t *testing.T) {
+
+	app := fiber.New()
+	app.Get("/customer", func(c *fiber.Ctx) error {
+		return c.SendString("Test")
+	})
+
 	type fields struct {
 		L              logger.ILogger
 		serviceUsecase services.IService

@@ -6,7 +6,7 @@ import (
 )
 
 // InitiateRouter ...
-func InitiateRouter(app *fiber.App, ctrl *handlers.HandlerImpl) {
+func InitiateRouter(app *fiber.App, ctrl handlers.IHandler) {
 	route := app.Group("/api/v1")
 
 	route.Get("/customers", ctrl.Get)

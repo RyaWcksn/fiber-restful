@@ -58,6 +58,7 @@ func (s *Server) Register() {
 
 	s.service = services.NewService(customerPort, s.logger)
 	s.handler = handlers.NewHandler(s.logger, s.service)
+
 }
 
 func New(cfg *configs.Config, logger logger.ILogger) *Server {
@@ -76,7 +77,6 @@ func New(cfg *configs.Config, logger logger.ILogger) *Server {
 
 func (s Server) Start() {
 	// init tracer
-
 	app := fiber.New()
-	router.InitiateRouter(app)
+	router.InitiateRouter(app, s.handler)
 }
