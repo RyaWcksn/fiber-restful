@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/RyaWcksn/fiber-restful/apis/v1/handlers"
+	"github.com/RyaWcksn/fiber-restful/server/middleware"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -9,5 +10,5 @@ import (
 func InitiateRouter(app *fiber.App, ctrl handlers.IHandler) {
 	route := app.Group("/api/v1")
 
-	route.Get("/customers", ctrl.Get)
+	route.Get("/customers", middleware.ErrHandler(ctrl.Get))
 }

@@ -12,6 +12,7 @@ import (
 	"github.com/RyaWcksn/fiber-restful/configs"
 	"github.com/RyaWcksn/fiber-restful/pkgs/database"
 	"github.com/RyaWcksn/fiber-restful/ports/database/customer"
+	"github.com/RyaWcksn/fiber-restful/server/middleware"
 	"github.com/RyaWcksn/fiber-restful/server/router"
 	"github.com/gofiber/fiber/v2"
 )
@@ -78,5 +79,6 @@ func New(cfg *configs.Config, logger logger.ILogger) *Server {
 func (s Server) Start() {
 	// init tracer
 	app := fiber.New()
+	app.Use(middleware.ValidateHeader())
 	router.InitiateRouter(app, s.handler)
 }
