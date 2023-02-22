@@ -3,6 +3,7 @@ package server
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 
@@ -43,7 +44,7 @@ func init() {
 
 // Register all instances.
 func (s *Server) Register() {
-	dbConn := database.NewDatabaseConnection(s.cfg.DBConf, s.logger)
+	dbConn := database.NewDatabaseConnection(s.cfg.MySql, s.logger)
 	if dbConn == nil {
 		s.logger.Fatal("Expecting db connection object but received nil")
 
@@ -81,4 +82,5 @@ func (s Server) Start() {
 	app := fiber.New()
 	app.Use(middleware.ValidateHeader())
 	router.InitiateRouter(app, s.handler)
+	log.Fatal(app.Listen(":8080"))
 }
